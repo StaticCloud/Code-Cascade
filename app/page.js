@@ -1,7 +1,8 @@
 export default function Home() {
   return (
-    <main>
+    <>
       <h1>Code Cascade</h1>
-    </main>
+      <p>A web development blog for the curious and the experienced.</p>
+    </>
   )
 }
