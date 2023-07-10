@@ -1,6 +1,6 @@
 .landingWrapper {
     height: 100svh;
-    width: 50svw;
+    width: 100svw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,5 +8,15 @@
 
 .landingWrapper div {
     margin: 15px;
-    max-width: 350px;
+}
+
+.landingWrapper a,
+.landingWrapper a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(212, 212, 212);
+}
+
+.landingWrapper a:hover {
+    color: white;
 }
