@@ -1,0 +1,12 @@
+.landingWrapper {
+    height: 100svh;
+    width: 50svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landingWrapper div {
+    margin: 15px;
+    max-width: 350px;
+}

@@ -1,16 +1,14 @@
 .mainContent {
-    display: block;
     background-color: black;
     color: white;
-    padding: 10px;
-    min-height: 100svh;;
+    min-height: 100svh;
 }
 
 .mainContent h1 {
     font-size: 3rem;
     position: relative;
     display: inline-flex;
-    border-bottom: 4px solid rgb(156, 72, 235);
+    border-bottom: 4px solid rgb(107, 72, 235);
 }
 
 .mainContent p {
