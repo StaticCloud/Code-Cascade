@@ -66,6 +66,12 @@ const HamburgerWrapper = styled.div`
         height: 100svh;
     }
 
+    input[type="checkbox"]:checked ~ nav a {
+        top: -30px;
+        margin: 30px 0;
+        opacity: 1;
+    }
+
     .hamburger, .hamburger:before, .hamburger:after {
         position: absolute;
         content: '';
@@ -118,17 +124,49 @@ const Nav = styled.nav`
     position: fixed;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     top: 0;
     bottom: 0;
     left: 0;
     padding-top: 50px;
-    width: 100vw;
-    height: 0vh;
-    list-style: none;
+    width: 100svw;
+    height: 0svh;
     transition: 0.4s;
     background-color: black;
     z-index: -1;
+
+    a {
+        display: inline-flex;
+        position: relative;
+        top: -95px;
+        color: white;
+        margin: 0;
+        padding: 3px;
+        opacity: 0;
+        transition: 0.4s;
+        font-size: 1.5rem;
+    }
+
+    a:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        z-index: -1;
+        display: inline-block;
+        transition: 0.4s;
+        background-color: rgb(240, 150, 66);
+    }
+
+    a:hover { 
+        cursor: pointer;
+    }
+
+    a:hover:before {
+        width: 100%;
+    }
 `
 
 export default function Header() {
@@ -142,7 +180,11 @@ export default function Header() {
                 <label htmlFor="nav-toggle">Mandatory Label for SEO</label>
                 <input type="checkbox" className="nav-toggle"/>
                 <div className='hamburger'/>
-                <Nav></Nav>
+                <Nav>
+                    <a>HOME</a>
+                    <a>ARTICLES</a>
+                    <a>ABOUT</a>
+                </Nav>
             </HamburgerWrapper>
         </HeaderWrapper>
     )
