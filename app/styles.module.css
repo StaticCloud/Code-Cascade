@@ -4,34 +4,6 @@
     min-height: 100svh;
 }
 
-.mainContent h1 {
-    font-size: 3rem;
-    position: relative;
-    display: inline-flex;
-    border-bottom: 4px solid rgb(107, 72, 235);
-}
-
 .mainContent p {
     margin-top: 10px;
-}
-
-.mainContent h1:before,
-.mainContent h1:after {
-    position: absolute;
-    display: block;
-    height: 4px;
-    content: '';
-    bottom: -4px;
-    left: 0;
-}
-
-.mainContent h1:before {
-    width: 50%;
-    background-color: rgb(240, 150, 66);
-}
-
-.mainContent h1:after {
-    left: 50%;
-    width: 30%;
-    background-color: rgb(233, 107, 195);
 }
