@@ -2,6 +2,7 @@
 
 import styled from 'styled-components'
 import { useState } from 'react';
+import Link from 'next/link';
 
 const HeaderWrapper = styled.header`
     width: 100svw;
@@ -136,6 +137,7 @@ const Nav = styled.nav`
     z-index: -1;
 
     a {
+        text-decoration: none;
         display: inline-flex;
         position: relative;
         top: -95px;
@@ -181,8 +183,8 @@ export default function Header() {
                 <input type="checkbox" className="nav-toggle"/>
                 <div className='hamburger'/>
                 <Nav>
-                    <a>HOME</a>
-                    <a>ARTICLES</a>
+                    <Link href='/'>HOME</Link>
+                    <Link href='/articles'>ARTICLES</Link>
                     <a>ABOUT</a>
                 </Nav>
             </HamburgerWrapper>
