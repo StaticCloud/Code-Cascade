@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { useState } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 const HeaderWrapper = styled.header`
     width: 100svw;
@@ -67,7 +67,7 @@ const HamburgerWrapper = styled.div`
         height: 100svh;
     }
 
-    input[type="checkbox"]:checked ~ nav a {
+    input[type="checkbox"]:checked ~ nav p {
         top: -30px;
         margin: 30px 0;
         opacity: 1;
@@ -136,8 +136,7 @@ const Nav = styled.nav`
     background-color: black;
     z-index: -1;
 
-    a {
-        text-decoration: none;
+    p {
         display: inline-flex;
         position: relative;
         top: -95px;
@@ -149,7 +148,7 @@ const Nav = styled.nav`
         font-size: 1.5rem;
     }
 
-    a:before {
+    p:before {
         content: '';
         position: absolute;
         top: 0;
@@ -162,11 +161,11 @@ const Nav = styled.nav`
         background-color: rgb(240, 150, 66);
     }
 
-    a:hover { 
+    p:hover { 
         cursor: pointer;
     }
 
-    a:hover:before {
+    p:hover:before {
         width: 100%;
     }
 `
@@ -174,17 +173,18 @@ const Nav = styled.nav`
 export default function Header() {
 
     const [checked, setChecked] = useState(false);
+    const router = useRouter()
 
     return (
         <HeaderWrapper>
             <Icon/>
             <HamburgerWrapper>
                 <label htmlFor="nav-toggle">Mandatory Label for SEO</label>
-                <input type="checkbox" className="nav-toggle"/>
+                <input type="checkbox" className="nav-toggle" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className='hamburger'/>
-                <Nav>
-                    <Link href='/'>HOME</Link>
-                    <Link href='/articles'>ARTICLES</Link>
+                <Nav onClick={() => setChecked(!checked)}>
+                    <p onClick={() => router.replace('/')}>HOME</p>
+                    <p onClick={() => router.replace('/articles')}>ARTICLES</p>
                     <a>ABOUT</a>
                 </Nav>
             </HamburgerWrapper>

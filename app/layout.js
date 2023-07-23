@@ -1,8 +1,8 @@
 import StyledComponentsRegistry from './registry';
 import { Raleway } from 'next/font/google'
 import styles from './styles.module.css';
-import './global.css';
 import Header from './components/Header';
+import './global.css';
 
 const inter = Raleway({ 
   weight: ['400', '800'],
