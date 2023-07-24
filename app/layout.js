@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <StyledComponentsRegistry>
           <Header/>
-          <main className={styles.mainContent}>
-            {children}
-          </main>
+            <main className={styles.mainContent}>
+              {children}
+            </main>
         </StyledComponentsRegistry>
       </body>
     </html>

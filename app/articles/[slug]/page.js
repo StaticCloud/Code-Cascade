@@ -1,10 +1,28 @@
-import { Suspense } from 'react';
 import client from '../../../sanity/client'
 
+async function getArticle(slug) {
+    const res = await client.fetch(`*[_type == 'blogPost' && slug.current == '${slug}']`)
+
+    if (res == []) {
+        throw new Error("No such article!")
+    }
+
+    return res;
+
+}
+
 export default async function SingleArticle({ params }) {
-    const post = await client.fetch(`*[_type == 'blogPost' && slug.current == '${params.slug}']`)
+    const post = await getArticle(params.slug)
 
     return (
-        <h1>{params.slug}</h1>
+        <>
+            {post.length ? (
+                <h1>Hello world!</h1>
+            ):(
+                <>
+                <h1>No such post found!</h1>
+                </>
+            )}
+        </>
     );
 }
