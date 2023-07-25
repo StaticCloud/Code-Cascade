@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-const LoadingWrapper = styled.div`
+const LoadingWrapper = styled.section`
     width: 100%;
     height: 100%;
     top: 0;
