@@ -1,7 +1,8 @@
 import client from '../../../sanity/client';
+import styles from '../styles/article.module.css'
 import Image from 'next/image';
 import TitleWrapper from './components/titleWrapper';
-import CategoryBlock from './components/categoryBlock';
+import ImageWrapper from './components/imageWrapper';
 
 async function getArticle(slug) {
     const res = await client.fetch(`*[_type == 'blogPost' && slug.current == '${slug}'] { 
@@ -24,12 +25,13 @@ export default async function SingleArticle({ params }) {
     console.log(post)
 
     return (
-        <>
+        <article className={styles.articleContent}>
             <TitleWrapper color={post.category.color.hex}>
-                <CategoryBlock color={post.category.color.hex}>{post.category.name}</CategoryBlock>
                 <h1>{post.title}</h1>
             </TitleWrapper>
-            <Image src={post.imagePreviewUrl} width={500} height={500} alt="Article image preview"/>
-        </>
+            <ImageWrapper>
+                <Image fill={true} src={post.imagePreviewUrl} alt="Article image preview"/>
+            </ImageWrapper>
+        </article>
     );
 }

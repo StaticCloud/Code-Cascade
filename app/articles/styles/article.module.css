@@ -1,3 +1,7 @@
 .articleWrapper {
     padding-top: 50px;
 }
+
+.articleContent {
+    padding: 20px;
+}
