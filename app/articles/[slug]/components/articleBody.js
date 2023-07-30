@@ -1,4 +1,3 @@
-import Image from "next/image"
 import BlockChild from "./blockChild"
 
 export default function ArticleBody({ body }) {
