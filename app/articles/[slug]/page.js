@@ -27,7 +27,7 @@ export default async function SingleArticle({ params }) {
 
     return (
         <>
-            <header className={styles.articleContent}>
+            <header className={styles.header}>
                 <TitleWrapper color={post.category.color.hex}>
                     <h1>{post.title}</h1>
                 </TitleWrapper>
@@ -35,7 +35,7 @@ export default async function SingleArticle({ params }) {
                     <Image fill={true} src={post.imagePreviewUrl} alt="Article image preview"/>
                 </ImageWrapper>
             </header>
-            <article>
+            <article className={styles.articleContent}>
                 <ArticleBody body={post.body}/>
             </article>
         </>
