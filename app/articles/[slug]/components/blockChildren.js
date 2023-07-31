@@ -1,11 +1,10 @@
 export default function BlockChild({ block }) {
-    return (<span> 
-        {block.children.map((child, i) => {
-            switch (child.marks[0]) {
+    return block.children.map((child, i) => {
+            switch (child.mark) {
                 case 'code':
                     return <span><code>{child.text}</code></span>
                 default:
                     return child.text
             }
-        })}</span>)
+        })
 }

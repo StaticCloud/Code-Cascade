@@ -1,25 +1,26 @@
 import Image from "next/image"
-import BlockChild from "./blockChild"
+import BlockChildren from "./blockChildren"
 
 export default function ArticleBody({ body }) {
+    console.log(body)
     return body.map((block, i) => {
-        switch (block.style) {
-            case 'normal':
-                if (block.children.length && block.children[0].text != '') {
-                    if (!block.listItem) {
-                        return <p key={i}><BlockChild block={block}/></p>
-                    } else {
-                        return <li key={i}><BlockChild block={block}/></li>
-                    }
-                } else {
-                    return <br/>
+        switch (block.type) {
+            case "block":
+                switch (block.style) {
+                    case 'normal':
+                        switch (block.children[0].text) {
+                            case '':
+                                return <br/>
+                            default:
+                                return <p>
+                                    <BlockChildren block={block}/>
+                                </p>;
+                        } 
+                    case 'h2':
+                        return <h2>
+                            <BlockChildren block={block}/>
+                        </h2>
                 }
-            case 'h2':
-                return <h2 key={i}><BlockChild block={block}/></h2>
-        }
-
-        if (block.image) {
-            return <h2 key={i}>{block.alt}</h2>
         }
     })
 }
