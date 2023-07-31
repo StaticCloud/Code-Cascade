@@ -8,7 +8,7 @@ const TitleWrapper = styled.div`
     margin-bottom: 20px;
 
     h1 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 `;
 

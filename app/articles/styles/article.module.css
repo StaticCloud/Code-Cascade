@@ -15,3 +15,7 @@
     border-radius: 2px;
     background-color: #424242;
 }
+
+.articleContent h2 {
+    margin-top: 40px;
+}
