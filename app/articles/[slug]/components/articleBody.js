@@ -1,4 +1,5 @@
 import Image from "next/image"
+import BodyImage from "./bodyImage"
 import BlockChildren from "./blockChildren"
 
 export default function ArticleBody({ body }) {
@@ -21,6 +22,8 @@ export default function ArticleBody({ body }) {
                             <BlockChildren block={block}/>
                         </h2>
                 }
+            case "bodyImage":
+                return <BodyImage src={block.image} alt={block.alt}/>
         }
     })
 }
