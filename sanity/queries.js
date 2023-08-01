@@ -17,7 +17,9 @@ export async function getPost(slug) {
                     "children": children[] {
                         text,
                         "mark": coalesce(marks[0], null)
-                    }
+                    },
+                    "listItem": coalesce(listItem, null),
+                    "level": coalesce(level, 0),
                 },
                 _type == "bodyImage" => {
                     alt,

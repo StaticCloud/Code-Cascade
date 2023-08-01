@@ -1,9 +1,7 @@
-import Image from "next/image"
 import BodyImage from "./bodyImage"
 import BlockChildren from "./blockChildren"
 
 export default function ArticleBody({ body }) {
-    console.log(body)
     return body.map((block, i) => {
         switch (block.type) {
             case "block":
@@ -13,9 +11,13 @@ export default function ArticleBody({ body }) {
                             case '':
                                 return <br/>
                             default:
-                                return <p>
-                                    <BlockChildren block={block}/>
-                                </p>;
+                                switch (block.listItem) {
+                                    case 'bullet':
+                                        return <li style={{marginLeft: 15 * (block.level) + 'px'}}><BlockChildren block={block}/></li>
+                                    default:
+                                        return <p><BlockChildren block={block}/></p>
+                                }
+                                
                         } 
                     case 'h2':
                         return <h2>
