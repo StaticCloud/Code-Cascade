@@ -1,26 +1,14 @@
-'use client'
+import Result from './result'
+import { getPostSearch } from '@/sanity/queries'
 
-import Link from 'next/link'
-import styled from 'styled-components';
+export default async function resultsList() {
+    const results = await getPostSearch();
 
-const SearchResults = styled.div`
-    a {
-        color: white;
-        display: block;
-        text-decoration: none;
-        padding: 10px;
-    }
-`;
-
-export default function resultsList({ results }) {
     return (
-        <SearchResults>
+        <div>
             {results.map((result, i) => (
-                <Link 
-                    key={i} 
-                    href={`/articles/${result.slug}`}
-                    style={{borderLeft: `2px solid ${result.categoryColor}`}}>{result.title}</Link>
+                <Result result={result} key={i}/>
             ))}
-        </SearchResults>
+        </div>
     )
 }

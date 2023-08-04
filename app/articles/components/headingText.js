@@ -1,13 +1,13 @@
-import { getPostSearch } from "@/sanity/queries";
 import ResultsList from "./resultsList";
+import { Suspense } from 'react'
 
 export default async function headingText({ category }) {
-    const res = await getPostSearch()
-
     return (
         <>
-        <h1>I want to read about {category ? category : 'anything.'}</h1>
-        <ResultsList results={res}/>
+            <h1>I want to read about {category ? category : 'anything.'}</h1>
+            <Suspense fallback={<p>LOADING (temporary)</p>}>
+                <ResultsList/>
+            </Suspense>
         </>
     )
 }
