@@ -42,3 +42,14 @@ export async function getPostSearch(category) {
 
     return posts;
 }
+
+export async function getCategories() {
+    const categories = await client.fetch(
+        `*[_type == 'category'] {
+            name,
+            'categoryColor': color.hex
+          }`
+    );
+
+    return categories;
+}
