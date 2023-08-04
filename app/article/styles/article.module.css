@@ -1,0 +1,21 @@
+.articleWrapper {
+    padding-top: 50px;
+}
+
+.header {
+    padding: 20px;
+}
+
+.articleContent {
+    padding: 0 20px 20px 20px;
+}
+
+.articleContent code {
+    padding: 1px 3px;
+    border-radius: 2px;
+    background-color: #424242;
+}
+
+.articleContent h2 {
+    margin-top: 40px;
+}

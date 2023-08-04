@@ -16,7 +16,7 @@ export default function Result({ result }) {
     return (
         <SearchResult>
             <Link
-                href={`/articles/${result.slug}`}
+                href={`/article/${result.slug}`}
                 style={{ borderLeft: `2px solid ${result.categoryColor}` }}>{result.title}</Link>
         </SearchResult>
     )
