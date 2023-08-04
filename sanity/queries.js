@@ -1,6 +1,6 @@
 import client from "./client";
 
-export async function getPost(slug) {
+export async function getArticle(slug) {
     const post = await client.fetch(
         `*[_type == 'blogPost' && slug.current == '${slug}'] {
             title,
@@ -29,4 +29,16 @@ export async function getPost(slug) {
         }`);
 
     return post;
+}
+
+export async function getPostSearch(category) {
+    const posts = await client.fetch(
+        `*[_type == 'blogPost' ${category ? `&& category->name == ${category}` : ''}] {
+            title,
+            "categoryColor": category->color.hex,
+            "slug": slug.current
+        }`
+    )
+
+    return posts;
 }

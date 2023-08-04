@@ -1,5 +1,7 @@
-export default function Articles() {
+import HeadingText from "./components/headingText";
+
+export default async function Articles() {
     return (
-        <h1>HELLO WORLD</h1>
+        <HeadingText/>
     );
 }

@@ -1,13 +1,12 @@
-import client from '../../../sanity/client';
-import { getPost } from '../../../sanity/queries';
+import { getArticle } from '@/sanity/queries';
 import styles from '../styles/article.module.css'
 import Image from 'next/image';
 import TitleWrapper from './components/titleWrapper';
 import ImageWrapper from './components/imageWrapper';
 import ArticleBody from './components/articleBody';
 
-async function getArticle(slug) {
-    const res = await getPost(slug);
+async function loadArticle(slug) {
+    const res = await getArticle(slug);
 
     if (!res.length) {
         throw new Error("The article could not be found.")
@@ -18,7 +17,7 @@ async function getArticle(slug) {
 }
 
 export default async function SingleArticle({ params }) {
-    const post = await getArticle(params.slug)
+    const post = await loadArticle(params.slug)
 
     return (
         <>
