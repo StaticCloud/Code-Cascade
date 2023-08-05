@@ -185,7 +185,7 @@ export default function Header() {
                 <Nav onClick={() => setChecked(!checked)}>
                     <p onClick={() => router.replace('/')}>HOME</p>
                     <p onClick={() => router.replace('/articles')}>ARTICLES</p>
-                    <a>ABOUT</a>
+                    <p onClick={() => router.replace('/about')}>ABOUT</p>
                 </Nav>
             </HamburgerWrapper>
         </HeaderWrapper>

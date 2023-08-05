@@ -1,6 +1,7 @@
 'use client'
 
-import styled from 'styled-components'
+import styled from 'styled-components';
+import Link from 'next/link';
 
 const ErrorWrapper = styled.section`
     width: 100%;
@@ -19,14 +20,29 @@ const ErrorBlock = styled.div`
     h1 {
         font-size: 3rem;
     }
+
+    a {
+        display: inline-block;
+        font-weight: bold;
+        margin-top: 5px;
+        color: rgb(212, 212, 212);;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: white;
+    }
 `;
 
-export default function Error({ error, reset }) {
+export default function NotFound({ error, reset }) {
     return (
         <ErrorWrapper>
             <ErrorBlock>
                 <h1>An error has occurred.</h1>
-                <p>This route is not valid.</p>
+                <p>The page you requested does not exist.</p>
+                <Link href='/'>
+                    <p>Return Home</p>
+                </Link>
             </ErrorBlock>
         </ErrorWrapper>
     )
