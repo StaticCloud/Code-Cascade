@@ -43,11 +43,12 @@ export async function getPostSearch(category) {
     return posts;
 }
 
-export async function getCategories() {
+export async function getCategories(category) {
     const categories = await client.fetch(
-        `*[_type == 'category'] {
+        `*[_type == 'category' ${category ? `&& slug.current == '${category}'` : ''}] {
             name,
-            'categoryColor': color.hex
+            'categoryColor': color.hex,
+            "slug": slug.current
           }`
     );
 
