@@ -1,5 +1,3 @@
-export default async function Article() {
-    return (
-        <></>
-    );
+export default function Article() {
+    throw new Error();
 }

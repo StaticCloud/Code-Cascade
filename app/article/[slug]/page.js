@@ -13,7 +13,6 @@ async function loadArticle(slug) {
     }
 
     return res[0];
-
 }
 
 export default async function SingleArticle({ params }) {

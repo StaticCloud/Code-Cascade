@@ -33,7 +33,7 @@ export async function getArticle(slug) {
 
 export async function getPostSearch(category) {
     const posts = await client.fetch(
-        `*[_type == 'blogPost' ${category ? `&& category->name == ${category}` : ''}] {
+        `*[_type == 'blogPost' ${category ? `&& category->slug.current == '${category}'` : ''}] {
             title,
             "categoryColor": category->color.hex,
             "slug": slug.current
