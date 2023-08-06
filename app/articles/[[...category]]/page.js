@@ -3,23 +3,19 @@ import CategoryHeader from "../components/categoryHeader";
 import { getCategories, getPostSearch } from "@/sanity/queries"
 
 export default async function Articles({ params }) {
-    let category;
-
-    if (params.category == null) {
-        category = null;
-    } else {
-        category = params.category[0]
-    }
-
-    const currentCategoryQuery = getCategories(category);
     const allCategoriesQuery = getCategories();
-    const getPostSearchQuery = getPostSearch(category);
+    const getPostSearchQuery = getPostSearch(params.category);
+    const [allCategories, articles] = await Promise.all([allCategoriesQuery, getPostSearchQuery])
 
-    const [currentCategory, allCategories, articles] = await Promise.all([currentCategoryQuery, allCategoriesQuery, getPostSearchQuery])
+    const currentCategory = allCategories.filter(category => category.slug == params.category)[0] || { name: 'Anything', categoryColor: '#cecece' };
+
+    if (articles.length === 0) {
+        throw new Error('Invalid category');
+    }
 
     return (
         <>
-            <CategoryHeader allCategories= {allCategories} category={category ? currentCategory[0] : { name: 'Anything', categoryColor: '#cecece' }}/>
+            <CategoryHeader allCategories={allCategories} category={currentCategory}/>
             <ResultsList articles={articles}/>
         </>
     );
