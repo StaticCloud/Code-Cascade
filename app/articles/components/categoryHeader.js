@@ -11,7 +11,7 @@ export default function CategoryHeader({ category, allCategories }) {
     return (
         <>
             <p>I want to learn about...</p>
-            <CategoryHeaderWrapper color={category[0].categoryColor}>{category[0].name}</CategoryHeaderWrapper>
+            <CategoryHeaderWrapper color={category.categoryColor}>{category.name}</CategoryHeaderWrapper>
         </>
     )
 }

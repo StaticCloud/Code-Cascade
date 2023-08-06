@@ -1,7 +1,6 @@
 import ResultsList from "../components/resultsList";
 import CategoryHeader from "../components/categoryHeader";
-import { getCategories } from "@/sanity/queries"
-import { Suspense } from "react";
+import { getCategories, getPostSearch } from "@/sanity/queries"
 
 export default async function Articles({ params }) {
     let category;
@@ -11,15 +10,17 @@ export default async function Articles({ params }) {
     } else {
         category = params.category[0]
     }
-    
-    const categoryData = await getCategories(category)
+
+    const currentCategoryQuery = getCategories(category);
+    const allCategoriesQuery = getCategories();
+    const getPostSearchQuery = getPostSearch(category);
+
+    const [currentCategory, allCategories, articles] = await Promise.all([currentCategoryQuery, allCategoriesQuery, getPostSearchQuery])
 
     return (
         <>
-            <CategoryHeader category={categoryData}/>
-            <Suspense fallback={<p>LOADING (temporary)</p>}>
-                <ResultsList category={category}/>
-            </Suspense>
+            <CategoryHeader allCategories= {allCategories} category={category ? currentCategory[0] : { name: 'Anything', categoryColor: '#cecece' }}/>
+            <ResultsList articles={articles}/>
         </>
     );
 }

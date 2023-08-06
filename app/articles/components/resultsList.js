@@ -1,12 +1,9 @@
 import Result from './result'
-import { getPostSearch } from '@/sanity/queries'
 
-export default async function resultsList({ category }) {
-    const results = await getPostSearch(category);
-
+export default async function resultsList({ articles }) {
     return (
         <div>
-            {results.map((result, i) => (
+            {articles.map((result, i) => (
                 <Result result={result} key={i}/>
             ))}
         </div>
