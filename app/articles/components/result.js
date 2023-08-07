@@ -4,6 +4,8 @@ import Link from 'next/link'
 import styled from 'styled-components';
 
 const SearchResult = styled.div`
+    margin-bottom: 10px;
+
     a {
         color: white;
         display: block;
