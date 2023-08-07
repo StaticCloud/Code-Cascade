@@ -1,6 +1,5 @@
-import ResultsList from "../components/resultsList";
-import CategoryHeader from "../components/categoryHeader";
 import { getCategories, getPostSearch } from "@/sanity/queries"
+import PageContainer from "../components/pageContainer";
 
 export default async function Articles({ params }) {
     const allCategoriesQuery = getCategories();
@@ -15,8 +14,7 @@ export default async function Articles({ params }) {
 
     return (
         <>
-            <CategoryHeader allCategories={allCategories} category={currentCategory}/>
-            <ResultsList articles={articles}/>
+            <PageContainer allCategories={allCategories} category={currentCategory} articles={articles}/>
         </>
     );
 }

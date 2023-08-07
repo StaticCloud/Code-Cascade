@@ -1,6 +1,8 @@
+'use client'
+
 import Result from './result'
 
-export default async function resultsList({ articles }) {
+export default function resultsList({ articles }) {
     return (
         <div>
             {articles.map((result, i) => (
