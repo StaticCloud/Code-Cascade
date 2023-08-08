@@ -11,12 +11,12 @@ const LinkWrapper = styled.div`
         font-weight: bold;
         display: block;
         padding: 10px;
-        color: ${props => props.color};
+        color: white;
         transition: all 0.2s;
     }
 
     a:hover {
-        color: white;
+        color: ${props => props.color};
     }
 `;
 

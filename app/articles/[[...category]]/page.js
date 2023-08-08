@@ -8,10 +8,6 @@ export default async function Articles({ params }) {
 
     const currentCategory = allCategories.filter(category => category.slug == params.category)[0] || { name: 'Anything', categoryColor: '#cecece' };
 
-    if (articles.length === 0) {
-        throw new Error('Invalid category');
-    }
-
     return (
         <>
             <PageContainer allCategories={allCategories} category={currentCategory} articles={articles}/>

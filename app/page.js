@@ -9,7 +9,6 @@ export default function Home() {
         <Logo>Code Cascade</Logo>
         <p>A web development blog for the curious and the experienced.</p>
         <p>Code Cascade is developed and ran by <a href="https://github.com/StaticCloud">Diego Marrs</a></p>
-        <Button text='Articles'/>
       </div>
     </section>
   )

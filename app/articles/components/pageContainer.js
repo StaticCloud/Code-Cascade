@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import CategoryList from './categoryList'
 import ResultsList from './resultsList'
 import { useState } from 'react';
+import Link from 'next/link';
 
 const PageContainerWrapper = styled.section`
     width: 100svw;
@@ -14,7 +15,6 @@ const CategoryHeaderWrapper = styled.h1`
     color: ${props => props.color};
     font-size: 3rem;
     display: inline-block;
-    padding-bottom: 0.5rem;
 
     &:hover {
         cursor: pointer;
@@ -34,6 +34,23 @@ const SearchResultsWrapper = styled.div`
     p {
         font-weight: bold;
     }
+
+    & > div {
+        width: 400px;
+    }
+
+    & > div > a {
+        text-decoration: none;
+        display: inline-block;
+        color: #cecece;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        transition: all 0.2s;
+    }
+    
+    & > div > a:hover {
+        color: white;
+    }
 `;
 
 export default function PageContainer({ category, allCategories, articles }) {
@@ -51,7 +68,12 @@ export default function PageContainer({ category, allCategories, articles }) {
                             {category.name}
                         </CategoryHeaderWrapper>
                     </div>
-                    <ResultsList articles={articles} />
+                    {category.name != 'Anything' ? <Link href='/articles'>Clear Filter</Link> : null}
+                    {articles.length ? (
+                        <ResultsList articles={articles} />
+                    ) : (
+                        <p>No articles under that category. Be sure to check back later!</p>  
+                    )}
                 </div>
             </SearchResultsWrapper>
         </PageContainerWrapper>
