@@ -24,6 +24,11 @@ export async function getArticle(slug) {
                 _type == "bodyImage" => {
                     alt,
                     "image": image.asset->url
+                },
+                _type == "codeSnippet" => {
+                    "code": code.code,
+                    "language": language.typescript,
+                    description
                 }
             }
         }`);

@@ -3,6 +3,8 @@ export default function BlockChild({ block }) {
             switch (child.mark) {
                 case 'code':
                     return <span><code>{child.text}</code></span>
+                case 'strong':
+                    return <strong>{child.text}</strong>
                 default:
                     return child.text
             }

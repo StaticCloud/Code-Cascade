@@ -1,5 +1,6 @@
 import BodyImage from "./bodyImage"
 import BlockChildren from "./blockChildren"
+import CodeSnippet from "./codeSnippet"
 
 export default function ArticleBody({ body }) {
     return body.map((block, i) => {
@@ -13,9 +14,9 @@ export default function ArticleBody({ body }) {
                             default:
                                 switch (block.listItem) {
                                     case 'bullet':
-                                        return <li style={{marginLeft: 15 * (block.level) + 'px'}}><BlockChildren block={block}/></li>
+                                        return <li style={{marginLeft: 15 * (block.level) + 'px', lineHeight: 1.9 + 'rem'}}><BlockChildren block={block}/></li>
                                     default:
-                                        return <p><BlockChildren block={block}/></p>
+                                        return <p style={{lineHeight: 1.9 + 'rem'}}><BlockChildren block={block}/></p>
                                 }
                                 
                         } 
@@ -26,6 +27,8 @@ export default function ArticleBody({ body }) {
                 }
             case "bodyImage":
                 return <BodyImage src={block.image} alt={block.alt}/>
+            case "codeSnippet":
+                return <CodeSnippet block={block}/>
         }
     })
 }
