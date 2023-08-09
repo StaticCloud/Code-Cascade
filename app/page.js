@@ -1,4 +1,3 @@
-import Button from './components/Button';
 import styled from './landing.module.css';
 import Logo from './components/Logo';
 
