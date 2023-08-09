@@ -4,6 +4,7 @@ import Image from 'next/image';
 import TitleWrapper from './components/titleWrapper';
 import ImageWrapper from './components/imageWrapper';
 import ArticleBody from './components/articleBody';
+import Footer from './components/footer';
 
 async function loadArticle(slug) {
     const res = await getArticle(slug);
@@ -31,6 +32,9 @@ export default async function SingleArticle({ params }) {
             <article className={styles.articleContent}>
                 <ArticleBody body={post.body}/>
             </article>
+            <Footer>
+                
+            </Footer>
         </>
     );
 }

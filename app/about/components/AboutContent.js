@@ -6,7 +6,11 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 const AboutContentWrapper = styled.div`
-    max-width: 400px;
+    max-width: 450px;
+
+    p {
+        line-height: 1.5rem;
+    }
 
     div {
         margin: 10px 0 0 0;
@@ -14,7 +18,6 @@ const AboutContentWrapper = styled.div`
 
     a {
         display: inline-block;
-        color: white;
         opacity: 0.5;
         transition: all 0.2s;
     }
@@ -24,7 +27,6 @@ const AboutContentWrapper = styled.div`
     }
 
     img {
-        color: #cecece;
         padding: 5px;
     }
 `;
