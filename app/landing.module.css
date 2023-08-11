@@ -6,10 +6,6 @@
     align-items: center;
 }
 
-.landingWrapper:first-child(div) {
-    margin: 15px;
-}
-
 .landingWrapper a,
 .landingWrapper a:visited {
     text-decoration: none;
@@ -20,3 +16,4 @@
 .landingWrapper a:hover {
     color: white;
 }
+

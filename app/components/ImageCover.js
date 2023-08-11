@@ -9,10 +9,15 @@ const ImageWrapper = styled.div`
     width: 50svw;
     top: 0px;
     right: 0;
+    display: none;
 
     img {
         object-fit: cover;
         clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    @media screen and (min-width: 850px) {
+        display: block;
     }
 `
 
