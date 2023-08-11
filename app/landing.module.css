@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.landingWrapper div {
+.landingWrapper:first-child(div) {
     margin: 15px;
 }
 
