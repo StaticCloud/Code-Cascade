@@ -29,6 +29,18 @@ const AboutContentWrapper = styled.div`
     img {
         padding: 5px;
     }
+
+    @media screen and (min-width: 850px) {
+        margin-right: 50svw;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p { 
+            font-size: 1rem;
+        }
+    }
 `;
 
 export default function AboutContent() {
