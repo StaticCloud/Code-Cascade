@@ -15,11 +15,16 @@ const CategoryHeaderWrapper = styled.h1`
     color: ${props => props.color};
     font-size: 3rem;
     display: inline-block;
+    margin-bottom: 15px;
 
     &:hover {
         cursor: pointer;
         color: white;
         transition: all 0.2s;
+    }
+
+    @media screen and (min-width: 850px) {
+        font-size: 4rem;
     }
 `
 
@@ -50,6 +55,12 @@ const SearchResultsWrapper = styled.div`
     
     & > div > a:hover {
         color: white;
+    }
+
+    @media screen and (min-width: 850px) {
+        p { 
+            font-size: 1.3rem;
+        }
     }
 `;
 
