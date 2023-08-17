@@ -36,12 +36,18 @@ const SearchResultsWrapper = styled.div`
     width: 100%;
     height: 100%;
 
+    h1 {
+        font-size: 3rem;
+    }
+
     p {
+        font-size: .9rem;
         font-weight: bold;
     }
 
     & > div {
-        width: 400px;
+        max-width: 400px;
+        margin: 1rem;
     }
 
     & > div > a {

@@ -3,7 +3,15 @@
 import styled from 'styled-components'
 
 const LandingLogo = styled.div`
-    margin: 20px;
+    margin: 1rem;
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p { 
+        font-size: .8rem;
+    }
 
     div {
         margin-top: 10px;
@@ -23,7 +31,7 @@ const LandingLogo = styled.div`
         margin-right: 50svw;
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
         }
 
         p { 

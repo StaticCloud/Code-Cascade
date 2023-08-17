@@ -22,7 +22,6 @@ const LinkWrapper = styled.div`
 
 const CategoryListWrapper = styled.div`
     position: fixed;
-    top: 50px;
     height: 100svh;
     z-index: 2;
     background-color: black;
@@ -42,7 +41,7 @@ const CategoryListWrapper = styled.div`
         width: 100svw;
         position: fixed;
         z-index: -2;
-        background-color: rgba(16,16,16,0.2);
+        background-color: rgba(7,7,7,0.5);
         display: ${props => props.$showList ? `block` : `none`}
     }
 

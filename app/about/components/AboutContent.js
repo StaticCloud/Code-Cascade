@@ -6,9 +6,15 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 const AboutContentWrapper = styled.div`
-    max-width: 450px;
+    max-width: 400px;
+    margin: 1rem;
+
+    h1 {
+        font-size: 1.5rem;
+    }
 
     p {
+        font-size: .8rem;
         line-height: 1.5rem;
     }
 
@@ -27,7 +33,7 @@ const AboutContentWrapper = styled.div`
     }
 
     img {
-        padding: 5px;
+        margin-right: 10px;
     }
 
     @media screen and (min-width: 850px) {
@@ -52,10 +58,10 @@ export default function AboutContent() {
             <p>Code Cascade is developed and maintained by Diego Marrs. Feel free to check out my GitHub page or connect with me on LinkedIn.</p>
             <div>
                 <a href="https://github.com/StaticCloud" target="_blank">
-                    <Image src={GitHub} alt="GitHub Icon" width={"50"} height={"50"}/>
+                    <Image src={GitHub} alt="GitHub Icon" width={"30"} height={"30"}/>
                 </a>
                 <a href="https://www.linkedin.com/in/diego-marrs/" target="_blank">
-                    <Image src={LinkedIn} alt="LinkedIn Icon" width={"50"} height={"50"}/>
+                    <Image src={LinkedIn} alt="LinkedIn Icon" width={"30"} height={"30"}/>
                 </a>
             </div>
         </AboutContentWrapper>
