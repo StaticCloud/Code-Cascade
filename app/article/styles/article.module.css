@@ -19,3 +19,10 @@
 .articleContent h2 {
     margin-top: 40px;
 }
+
+@media screen and (min-width: 850px) {
+    .articleWrapper {
+        width: 850px;
+        margin: 0 auto;
+    }
+}
