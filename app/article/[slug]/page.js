@@ -1,4 +1,5 @@
 import { getArticle } from '@/sanity/queries';
+import { notFound } from 'next/navigation'
 import styles from '../styles/article.module.css'
 import Image from 'next/image';
 import TitleWrapper from './components/titleWrapper';
@@ -7,10 +8,10 @@ import ArticleBody from './components/articleBody';
 import Footer from './components/footer';
 
 async function loadArticle(slug) {
-    const res = await getArticle(slug);
+    let res = await getArticle(slug);
 
-    if (!res.length) {
-        throw new Error("The article could not be found.")
+    if (res.length === 0) {
+        notFound()
     }
 
     return res[0];
@@ -32,9 +33,7 @@ export default async function SingleArticle({ params }) {
             <article className={styles.articleContent}>
                 <ArticleBody body={post.body}/>
             </article>
-            <Footer>
-                
-            </Footer>
+            <Footer/>
         </>
     );
 }

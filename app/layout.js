@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import Header from './components/Header';
 import './global.css';
 
-const inter = Raleway({ 
+const inter = Raleway({
   weight: ['400', '800'],
   subsets: ['latin'],
   style: ['normal', 'italic']
@@ -18,12 +18,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel='icon' href='/icon.png' type='image/png' sizes='40x40'/>
+      </head>
       <body className={inter.className}>
         <StyledComponentsRegistry>
-          <Header/>
-            <main className={styles.mainContent}>
-              {children}
-            </main>
+          <Header />
+          <main className={styles.mainContent}>
+            {children}
+          </main>
         </StyledComponentsRegistry>
       </body>
     </html>
