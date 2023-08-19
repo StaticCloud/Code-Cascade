@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const HeaderWrapper = styled.header`
     width: 100svw;
@@ -67,7 +67,7 @@ const HamburgerWrapper = styled.div`
         height: 100svh;
     }
 
-    input[type="checkbox"]:checked ~ nav p {
+    input[type="checkbox"]:checked ~ nav a {
         top: -30px;
         margin: 30px 0;
         opacity: 1;
@@ -136,7 +136,8 @@ const Nav = styled.nav`
     background-color: black;
     z-index: -1;
 
-    p {
+    a {
+        text-decoration: none;
         display: inline-flex;
         position: relative;
         top: -95px;
@@ -147,33 +148,11 @@ const Nav = styled.nav`
         transition: 0.4s;
         font-size: 1.5rem;
     }
-
-    p:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        z-index: -1;
-        display: inline-block;
-        transition: 0.4s;
-        background-color: rgb(240, 150, 66);
-    }
-
-    p:hover { 
-        cursor: pointer;
-    }
-
-    p:hover:before {
-        width: 100%;
-    }
 `
 
 export default function Header() {
 
     const [checked, setChecked] = useState(false);
-    const router = useRouter()
 
     return (
         <HeaderWrapper>
@@ -183,9 +162,9 @@ export default function Header() {
                 <input type="checkbox" className="nav-toggle" checked={checked} onChange={() => setChecked(!checked)}/>
                 <div className='hamburger'/>
                 <Nav onClick={() => setChecked(!checked)}>
-                    <p onClick={() => router.replace('/')}>HOME</p>
-                    <p onClick={() => router.replace('/articles')}>ARTICLES</p>
-                    <p onClick={() => router.replace('/about')}>ABOUT</p>
+                    <Link href={'/'}>HOME</Link>
+                    <Link href={'/articles'}>ARTICLES</Link>
+                    <Link href={'/about'}>ABOUT</Link>
                 </Nav>
             </HamburgerWrapper>
         </HeaderWrapper>
