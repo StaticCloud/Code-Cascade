@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div>
+<h1>Code Cascade (Frontend Code) 🌲</h1>
 
-## Getting Started
+<img src="https://img.shields.io/github/license/StaticCloud/Weather-Pal?color=blue&style=for-the-badge"/>
 
-First, run the development server:
+<h1>Links 🚪</h1>
+<h3><a href="https://code-cascade-bexh.vercel.app/">Deployed App</a></h3>
+<h3><a href="https://github.com/StaticCloud/Code-Cascade-Sanity">Backend Code</a></h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<h1>Tech Stack 💻</h1>
+<img src="https://img.shields.io/badge/Next-000000.svg?style=for-the-badge&logo=next.js&logoColor=white">
+<img src="https://img.shields.io/badge/Sanity-F03E2F.svg?style=for-the-badge&logo=sanity&logoColor=white">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h1>About 📖</h1>
+<h3>Code Cascade is a web development blog made for developers of all skill levels. Code Cascade covers various categories related to web development. Users can search by category, under the articles page, and read easily understandable and informative blog posts related to their favorite web development topic.</h3>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+<h1>Image Preview 📷</h1>
+<img src="./public/image-preview.png"/>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<h1>License ⚖️</h1>
+<h3>This project is licensed under the MIT license. <a href="https://github.com/StaticCloud/Code-Cascade/blob/main/LICENSE.txt">Read more here.</a></h3>
 
-## Learn More
+<br/>
+<p>Made with ❤️ by StaticCloud</p>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</div>
