@@ -64,7 +64,7 @@ const HamburgerWrapper = styled.div`
     }
 
     input[type="checkbox"]:checked ~ nav {
-        height: 100svh;
+        height: 100dvh;
     }
 
     input[type="checkbox"]:checked ~ nav a {
