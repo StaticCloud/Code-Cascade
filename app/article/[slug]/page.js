@@ -18,11 +18,18 @@ async function loadArticle(slug) {
 }
 
 export async function generateMetadata({ params }) {
-    const res = await loadArticle(params.slug)
+    const title = params.slug.split('-').map(word => word[0].toUpperCase() + word.substr(1)).join(' ')
 
     return {
-        title: res.title + ' | Code Cascade',
-        image: res.previewImage
+        title: title + ' | Code Cascade',
+        openGraph: {
+            title: title + ' | Code Cascade',
+            images: [{
+                url: '@/public/meta-image.png',
+                width: 800,
+                height: 600
+            }]
+        }
     }
 }
 

@@ -6,12 +6,19 @@ import LandingLogo from './components/LandingLogo';
 import LinkedIn from '@/public/linkedin.svg';
 import GitHub from '@/public/github.svg';
 import Image from 'next/image'
-import metaImage from '@/public/meta-image.png'
 
 export const metadata = {
   title: 'Code Cascade',
   description: 'A web development blog for the curious and the experienced.',
-  image: metaImage
+  openGraph: {
+    title: 'Code Cascade',
+    description: 'A web development blog for the curious and the experienced.',
+    images: [{
+      url: '@/public/meta-image.png',
+      width: 800,
+      height: 600
+    }]
+  }
 }
 
 export default function Home() {
@@ -30,7 +37,7 @@ export default function Home() {
           </a>
         </div>
       </LandingLogo>
-      <ImageCover image={MtHood} alt={"Mt. Hood"}/>
+      <ImageCover image={MtHood} alt={"Mt. Hood"} />
     </section>
   )
 }
