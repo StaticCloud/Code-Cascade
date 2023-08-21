@@ -6,7 +6,13 @@ import LandingLogo from './components/LandingLogo';
 import LinkedIn from '@/public/linkedin.svg';
 import GitHub from '@/public/github.svg';
 import Image from 'next/image'
+import metaImage from '@/public/meta-image.png'
 
+export const metadata = {
+  title: 'Code Cascade',
+  description: 'A web development blog for the curious and the experienced.',
+  image: metaImage
+}
 
 export default function Home() {
   return (

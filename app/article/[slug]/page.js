@@ -17,6 +17,16 @@ async function loadArticle(slug) {
     return res[0];
 }
 
+export async function generateMetadata({ params }) {
+    const res = await loadArticle(params.slug)
+
+    return {
+        title: res.title + ' | Code Cascade',
+        image: res.previewImage
+    }
+}
+
+
 export default async function SingleArticle({ params }) {
     const post = await loadArticle(params.slug)
 
