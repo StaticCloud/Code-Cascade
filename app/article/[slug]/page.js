@@ -24,11 +24,6 @@ export async function generateMetadata({ params }) {
         title: title + ' | Code Cascade',
         openGraph: {
             title: title + ' | Code Cascade',
-            images: [{
-                url: '@/public/meta-image.png',
-                width: 800,
-                height: 600
-            }]
         }
     }
 }
