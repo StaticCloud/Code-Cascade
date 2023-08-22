@@ -13,11 +13,6 @@ export const metadata = {
   openGraph: {
     title: 'Code Cascade',
     description: 'A web development blog for the curious and the experienced.',
-    images: [{
-      url: '@/public/meta-image.png',
-      width: 800,
-      height: 600
-    }]
   }
 }
 
