@@ -89,6 +89,10 @@ const HamburgerWrapper = styled.div`
     .hamburger:after {
         top: 8px;
     }
+
+    @media screen and (min-width: 850px) {
+        display: none;
+    }
 `;
 
 const Icon = styled.div`
@@ -150,23 +154,63 @@ const Nav = styled.nav`
     }
 `
 
+const DesktopNav = styled.div`
+    display: none;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    align-items: center;
+    justify-content: end;
+
+    a {
+        text-decoration: none;
+        color: white;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    a:before {
+        content: '';
+        display: block;
+        position: absolute;
+        background-color: white;
+        height: 1px;
+        width: 0%;
+        bottom: 0;
+        transition: 0.2s all;
+    }
+
+    a:hover:before {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 850px) {
+        display: flex;
+    }
+`;
+
 export default function Header() {
 
     const [checked, setChecked] = useState(false);
 
     return (
         <HeaderWrapper>
-            <Icon/>
+            <Icon />
             <HamburgerWrapper>
                 <label htmlFor="nav-toggle">Mandatory Label for SEO</label>
-                <input type="checkbox" className="nav-toggle" checked={checked} onChange={() => setChecked(!checked)}/>
-                <div className='hamburger'/>
+                <input type="checkbox" className="nav-toggle" checked={checked} onChange={() => setChecked(!checked)} />
+                <div className='hamburger' />
                 <Nav onClick={() => setChecked(!checked)}>
                     <Link href={'/'}>HOME</Link>
                     <Link href={'/articles'}>ARTICLES</Link>
                     <Link href={'/about'}>ABOUT</Link>
                 </Nav>
             </HamburgerWrapper>
+            <DesktopNav>
+                <Link href={'/'}>HOME</Link>
+                <Link href={'/articles'}>ARTICLES</Link>
+                <Link href={'/about'}>ABOUT</Link>
+            </DesktopNav>
         </HeaderWrapper>
     )
 }
