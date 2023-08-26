@@ -173,15 +173,30 @@ const DesktopNav = styled.div`
         content: '';
         display: block;
         position: absolute;
-        background-color: white;
         height: 1px;
         width: 0%;
         bottom: 0;
         transition: 0.2s all;
     }
 
+    a:not(:hover):before {
+        right: 0;
+    }
+
     a:hover:before {
         width: 100%;
+    }
+
+    a:nth-child(1):before {
+        background-color: rgb(107, 72, 235);
+    }
+
+    a:nth-child(2):before {
+        background-color: rgb(240, 150, 66);
+    }
+
+    a:nth-child(3):before {
+        background-color: rgb(233, 107, 195);
     }
 
     @media screen and (min-width: 850px) {
