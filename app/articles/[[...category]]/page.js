@@ -6,7 +6,7 @@ export default async function Articles({ params }) {
     const getPostSearchQuery = getPostSearch(params.category);
     const [allCategories, articles] = await Promise.all([allCategoriesQuery, getPostSearchQuery])
 
-    const currentCategory = allCategories.filter(category => category.slug == params.category)[0] || { name: 'Anything', categoryColor: '#cecece' };
+    const currentCategory = allCategories.filter(category => category.slug == params.category)[0] || { name: 'Filter Articles', categoryColor: '#cecece' };
 
     return (
         <>

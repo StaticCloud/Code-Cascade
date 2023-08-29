@@ -12,19 +12,35 @@ const PageContainerWrapper = styled.section`
 `;
 
 const CategoryHeaderWrapper = styled.h1`
-    color: ${props => props.color};
-    font-size: 3rem;
+    color: grey;
+    font-size: 1.5rem;
     display: inline-block;
     margin-bottom: 15px;
+    position: relative;
 
     &:hover {
-        cursor: pointer;
         color: white;
+        cursor: pointer;
         transition: all 0.2s;
     }
 
-    @media screen and (min-width: 850px) {
-        font-size: 4rem;
+    &:before {
+        content: '';
+        bottom: -5px;
+        height: 2px;
+        background-color: ${props => props.color};
+        width: 0%;
+        display: inline-block;
+        position: absolute;
+        transition: all 0.2s;
+    }
+
+    &:hover:before {
+        width: 100%;
+    }
+
+    &:not(:hover):before {
+        right: 0;
     }
 `
 
@@ -36,36 +52,38 @@ const SearchResultsWrapper = styled.div`
     width: 100%;
     height: 100%;
 
-    h1 {
-        font-size: 3rem;
-    }
-
     p {
         font-size: .9rem;
         font-weight: bold;
     }
 
+    /* this needs serious work */
+
     & > div {
-        max-width: 400px;
+        max-width: 450px;
         margin: 1rem;
     }
 
-    & > div > a {
+    & > div > div > a {
         text-decoration: none;
-        display: inline-block;
+        display: block;
         color: #cecece;
         font-weight: bold;
         margin-bottom: 0.5rem;
         transition: all 0.2s;
     }
     
-    & > div > a:hover {
+    & > div > div > a:hover {
         color: white;
     }
 
     @media screen and (min-width: 850px) {
         p { 
             font-size: 1.3rem;
+        }
+
+        & > div {
+            min-width: 450px;
         }
     }
 `;
@@ -80,12 +98,11 @@ export default function PageContainer({ category, allCategories, articles }) {
             <SearchResultsWrapper>
                 <div>
                     <div>
-                        <p>I want to learn about...</p>
+                    {category.name != 'Filter Articles' ? <Link href='/articles'>Clear Filter</Link> : null}
                         <CategoryHeaderWrapper onClick={() => setCategoryListState(true)} color={category.categoryColor}>
                             {category.name}
                         </CategoryHeaderWrapper>
                     </div>
-                    {category.name != 'Anything' ? <Link href='/articles'>Clear Filter</Link> : null}
                     {articles.length ? (
                         <ResultsList articles={articles} />
                     ) : (
