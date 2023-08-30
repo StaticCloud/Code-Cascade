@@ -62,6 +62,8 @@ const SearchResultsWrapper = styled.div`
     & > div {
         max-width: 450px;
         margin: 1rem;
+        animation-name: transition-in;
+        animation-duration: .5s;
     }
 
     & > div > div > a {
@@ -84,6 +86,18 @@ const SearchResultsWrapper = styled.div`
 
         & > div {
             min-width: 450px;
+        }
+    }
+
+    @keyframes transition-in {
+        from {
+            opacity: 0;
+            margin-bottom: 3rem;
+        }
+
+        to {
+            opacity: 1;
+            margin-bottom: 1rem;
         }
     }
 `;

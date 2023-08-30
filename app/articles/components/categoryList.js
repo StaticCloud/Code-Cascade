@@ -4,19 +4,41 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const LinkWrapper = styled.div`
-    padding: 10px;
+    margin: 10px;
 
     a {
         text-decoration: none;
         font-weight: bold;
         display: block;
-        padding: 10px;
-        color: white;
+        margin: 10px;
+        color: grey;
         transition: all 0.2s;
+        display: inline-block;
+        position: relative;
+        transition: all .2s;
     }
 
     a:hover {
-        color: ${props => props.color};
+        color: white;
+    }
+
+    a:before {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        bottom: -5px;
+        position: absolute;
+        background-color: ${props => props.color};
+        transition: all .2s;
+    }
+
+    a:hover:before {
+        width: 100%;
+    }
+
+    a:not(:hover):before {
+        right: 0;
     }
 `;
 

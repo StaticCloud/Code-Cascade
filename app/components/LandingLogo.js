@@ -4,6 +4,8 @@ import styled from 'styled-components'
 
 const LandingLogo = styled.div`
     margin: 1rem;
+    animation-name: transition-in;
+    animation-duration: .5s;
 
     h1 {
         font-size: 2.5rem;
@@ -36,6 +38,18 @@ const LandingLogo = styled.div`
 
         p { 
             font-size: 1rem;
+        }
+    }
+
+    @keyframes transition-in {
+        from {
+            opacity: 0;
+            margin-bottom: 3rem;
+        }
+
+        to {
+            opacity: 1;
+            margin-bottom: 1rem;
         }
     }
 `;
