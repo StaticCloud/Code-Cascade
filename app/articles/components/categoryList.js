@@ -11,7 +11,7 @@ const LinkWrapper = styled.div`
         font-weight: bold;
         display: block;
         margin: 10px;
-        color: grey;
+        color: white;
         transition: all 0.2s;
         display: inline-block;
         position: relative;
@@ -26,25 +26,44 @@ const LinkWrapper = styled.div`
         content: '';
         display: block;
         height: 2px;
-        width: 0;
+        width: 100%;
         bottom: -5px;
         position: absolute;
         background-color: ${props => props.color};
         transition: all .2s;
     }
 
-    a:hover:before {
-        width: 100%;
-    }
+    
 
-    a:not(:hover):before {
-        right: 0;
+    @media screen and (min-width: 850px) {
+        a { 
+            color: grey;
+            font-size: 3rem;
+        }
+
+        a:before {
+            height: 4px;
+            width: 0%;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        a:hover:before {
+            width: 100%;
+        }
+    
+        a:not(:hover):before {
+            right: 0;
+        }
     }
 `;
 
 const CategoryListWrapper = styled.div`
     position: fixed;
     height: 100svh;
+    width: 50svw;
     z-index: 2;
     background-color: black;
     overflow-y: scroll;

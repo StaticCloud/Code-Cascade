@@ -12,7 +12,7 @@ const PageContainerWrapper = styled.section`
 `;
 
 const CategoryHeaderWrapper = styled.h1`
-    color: grey;
+    color: white;
     font-size: 1.5rem;
     display: inline-block;
     margin-bottom: 15px;
@@ -29,18 +29,27 @@ const CategoryHeaderWrapper = styled.h1`
         bottom: -5px;
         height: 2px;
         background-color: ${props => props.color};
-        width: 0%;
+        width: 100%;
         display: inline-block;
         position: absolute;
         transition: all 0.2s;
     }
 
-    &:hover:before {
-        width: 100%;
-    }
-
-    &:not(:hover):before {
-        right: 0;
+    @media screen and (min-width: 850px) {
+        color: grey;
+        font-size: 2rem;
+        
+        &:before {
+            width: 0%;
+        }
+        
+        &:hover:before {
+            width: 100%;
+        }
+    
+        &:not(:hover):before {
+            right: 0;
+        }
     }
 `
 
