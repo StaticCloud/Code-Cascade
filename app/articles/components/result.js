@@ -8,18 +8,29 @@ const SearchResult = styled.div`
 
     a {
         color: white;
+        font-size: .8rem;
         display: block;
         text-decoration: none;
         padding: 10px;
+        border-left: 2px solid ${props => props.color};
+        transition: .2s all;
+    }
+
+    @media screen and (min-width: 850px) {
+        a {
+            font-size: 1rem;
+        }
+        
+        a:hover {
+            border-left-width: 8px;
+        }
     }
 `;
 
 export default function Result({ result }) {
     return (
-        <SearchResult>
-            <Link
-                href={`/article/${result.slug}`}
-                style={{ borderLeft: `2px solid ${result.categoryColor}` }}>{result.title}</Link>
+        <SearchResult color={result.categoryColor}>
+            <Link href={`/article/${result.slug}`}>{result.title}</Link>
         </SearchResult>
     )
 }
