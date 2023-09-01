@@ -16,7 +16,7 @@ export default function ArticleBody({ body }) {
                                     case 'bullet':
                                         return <li style={{marginLeft: 15 * (block.level) + 'px', lineHeight: 1.9 + 'rem'}}><BlockChildren block={block}/></li>
                                     default:
-                                        return <p style={{lineHeight: 1.9 + 'rem'}}><BlockChildren block={block}/></p>
+                                        return <p><BlockChildren block={block}/></p>
                                 }
                                 
                         } 

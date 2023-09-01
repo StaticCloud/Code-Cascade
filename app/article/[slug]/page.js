@@ -39,13 +39,13 @@ export default async function SingleArticle({ params }) {
                     <h1>{post.title}</h1>
                 </TitleWrapper>
                 <ImageWrapper>
-                    <Image fill={true} src={post.previewImage} alt="Article image preview"/>
+                    <Image fill={true} src={post.previewImage} alt="Article image preview" />
                 </ImageWrapper>
             </header>
             <article className={styles.articleContent}>
-                <ArticleBody body={post.body}/>
+                <ArticleBody body={post.body} />
             </article>
-            <Footer/>
+            <Footer />
         </>
     );
 }

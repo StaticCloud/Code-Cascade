@@ -10,6 +10,12 @@
     padding: 0 20px 20px 20px;
 }
 
+.articleContent p,
+.articleContent li {
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+}
+
 .articleContent code {
     padding: 1px 3px;
     border-radius: 2px;
@@ -24,5 +30,11 @@
     .articleWrapper {
         width: 850px;
         margin: 0 auto;
+    }
+
+    .articleContent p,
+    .articleContent li {
+        line-height: 1.9rem;
+        font-size: 1rem;
     }
 }

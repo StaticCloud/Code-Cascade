@@ -8,7 +8,13 @@ const TitleWrapper = styled.div`
     margin-bottom: 20px;
 
     h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: 850px) {
+        h1 {
+            font-size: 2rem;
+        }
     }
 `;
 
